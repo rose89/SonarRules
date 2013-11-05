@@ -1,5 +1,8 @@
 package testSonar;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Vector;
 
@@ -142,5 +145,20 @@ public class SonarRules {
 		String test = "test";
 		test = "test2";
 		return test.toString();
+	}
+	
+	/*
+	 * Avoid Catching Throwable+Unconditional If Statement
+	 */
+	public void catchThrowable() {
+		if (true) {
+			try {
+				BufferedWriter un = new BufferedWriter(new FileWriter("un.txt"));
+			} catch (Throwable e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+		}
+		
 	}
 }

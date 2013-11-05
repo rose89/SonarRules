@@ -161,4 +161,12 @@ public class SonarRules {
 		}
 		
 	}
+	
+	/*
+	 * Equals Hash Code
+	 */
+	
+	public boolean equals(Object o) {
+		return true;
+	}
 }

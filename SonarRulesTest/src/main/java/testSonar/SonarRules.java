@@ -150,7 +150,7 @@ public class SonarRules {
 	/*
 	 * Avoid Catching Throwable+Unconditional If Statement
 	 */
-	public void catchThrowable() {
+	public void catchThrowableAndInconditionalIf() {
 		if (true) {
 			try {
 				BufferedWriter un = new BufferedWriter(new FileWriter("un.txt"));

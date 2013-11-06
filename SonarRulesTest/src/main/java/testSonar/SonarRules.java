@@ -181,7 +181,7 @@ public class SonarRules extends ConcurrentHashMap<String, String>{
 	void methodCallWait() throws InterruptedException{
 		for (int i = 0;i<42;i++)
 			wait(1);
-		wait(1);
+		wait();
 	}
 	/*
 	 * Performance - Use the nextInt method of Random rather than nextDouble to generate a random integer

@@ -208,7 +208,7 @@ public class SonarRules extends ConcurrentHashMap<String, String>{
 		return new SonarRules();
 	}
 	void methodWhoCallPreviousMethd(){
-		System.out.println((String)methodeWhoReaturnObject());
+		System.out.println((ArrayList<String>)methodeWhoReaturnObject());
 	}
 	
 }

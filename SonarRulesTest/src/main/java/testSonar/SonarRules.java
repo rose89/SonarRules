@@ -10,8 +10,9 @@ import java.util.Vector;
  * Unused Imports
  */
 import java.util.ArrayList;
+import java.util.concurrent.ConcurrentHashMap;
 
-public class SonarRules {
+public class SonarRules extends ConcurrentHashMap<String, String>{
 
 	private int myProperty;
 
@@ -91,7 +92,7 @@ public class SonarRules {
 	 * Naming - Suspicious equals method name
 	 */
 	/*
-	 * public int equals(Object o) { // signalé par java return 0; }
+	 * public int equals(Object o) { // signalï¿½ par java return 0; }
 	 */
 
 	/*
@@ -169,4 +170,16 @@ public class SonarRules {
 	public boolean equals(Object o) {
 		return true;
 	}
+	
+
+	//page 15 Findbug major-critical
+	/*
+	 * Using monitor style wait methods on util.concurrent abstraction
+	 */
+	
+	void methodCallWait() throws InterruptedException{
+		wait();
+	}
+	
+	//fin page 15 Findbug major-critical
 }

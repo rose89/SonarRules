@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Vector;
 
 /*
@@ -178,8 +179,15 @@ public class SonarRules extends ConcurrentHashMap<String, String>{
 	 */
 	
 	void methodCallWait() throws InterruptedException{
-		wait();
+		this.wait();
 	}
+	/*
+	 * Performance - Use the nextInt method of Random rather than nextDouble to generate a random integer
+	 */
 	
+	int rand(){
+		Random ran = new Random();
+		return (int)ran.nextDouble();
+	}
 	//fin page 15 Findbug major-critical
 }

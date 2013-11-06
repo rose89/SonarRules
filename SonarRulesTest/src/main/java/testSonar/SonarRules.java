@@ -167,7 +167,7 @@ public class SonarRules extends ConcurrentHashMap<String, String>{
 	/*
 	 * Equals Hash Code
 	 */
-	
+
 	public boolean equals(Object o) {
 		return true;
 	}
@@ -208,7 +208,14 @@ public class SonarRules extends ConcurrentHashMap<String, String>{
 		return new SonarRules();
 	}
 	void methodWhoCallPreviousMethd(){
-		ArrayList list = (ArrayList<String>)methodeWhoReaturnObject();
+		ArrayList list = (ArrayList<Integer>)methodeWhoReaturnObject();
+	}
+	
+	/*
+	 * Naming - Suspicious equals method name
+	 */
+	public  boolean equals(SonarRules o) {
+		return true;
 	}
 	
 }

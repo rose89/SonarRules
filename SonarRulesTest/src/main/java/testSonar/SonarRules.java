@@ -13,6 +13,15 @@ import java.util.Vector;
 import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
 
+class Door{
+	void open(){
+		
+	}
+	void close(){
+		
+	}
+}
+
 public class SonarRules extends ConcurrentHashMap<String, String>{
 
 	private int myProperty;
@@ -224,5 +233,13 @@ public class SonarRules extends ConcurrentHashMap<String, String>{
 	public boolean instanceOfNull(){
 		Object maVariableNull = null;
 		return maVariableNull instanceof Object;
+	}
+	
+	/*
+	 * Correctness - close() invoked on a value that is always null
+	 */
+	public void closeNull(){
+		Door maVariableNull = null;
+		maVariableNull.close();
 	}
 }

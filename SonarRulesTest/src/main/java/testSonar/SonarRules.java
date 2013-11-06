@@ -201,4 +201,14 @@ public class SonarRules extends ConcurrentHashMap<String, String>{
 				break;
 		}
 	}
+	/*
+	 * Unchecked/unconfirmed cast of return value from method
+	 */
+	Object methodeWhoReaturnObject (){
+		return new SonarRules();
+	}
+	void methodWhoCallPreviousMethd(){
+		System.out.println((String)methodeWhoReaturnObject());
+	}
+	
 }

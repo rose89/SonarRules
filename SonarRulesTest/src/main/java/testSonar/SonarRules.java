@@ -218,4 +218,11 @@ public class SonarRules extends ConcurrentHashMap<String, String>{
 		return true;
 	}
 	
+	/*
+	 * Correctness - A known null value is checked to see if it is an instance of a type
+	 */
+	public boolean instanceOfNull(){
+		Object maVariableNull = null;
+		return maVariableNull instanceof Object;
+	}
 }

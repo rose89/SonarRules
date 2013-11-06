@@ -173,7 +173,6 @@ public class SonarRules extends ConcurrentHashMap<String, String>{
 	}
 	
 
-	//page 15 Findbug major-critical
 	/*
 	 * Using monitor style wait methods on util.concurrent abstraction
 	 */
@@ -185,9 +184,21 @@ public class SonarRules extends ConcurrentHashMap<String, String>{
 	 * Performance - Use the nextInt method of Random rather than nextDouble to generate a random integer
 	 */
 	
-	void rand(){
+	int rand(){
 		Random ran = new Random();
-		System.out.println((int)(ran.nextDouble()*10));
+		return ((int)(ran.nextDouble()*10));
 	}
-	//fin page 15 Findbug major-critical
+	
+	/*
+	 * Switch statement found where one case falls through to the next case
+	 */
+	void methodCallSwitch(){
+		switch (rand()){
+			case 42 :
+				System.out.println("42 c'est la classe !");
+			case 0:
+				System.out.println("c'est null");
+				break;
+		}
+	}
 }

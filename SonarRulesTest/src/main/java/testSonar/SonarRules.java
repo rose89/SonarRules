@@ -187,7 +187,7 @@ public class SonarRules extends ConcurrentHashMap<String, String>{
 	
 	int rand(){
 		Random ran = new Random();
-		return (int)ran.nextDouble();
+		return (int)(ran.nextDouble()*10);
 	}
 	//fin page 15 Findbug major-critical
 }
